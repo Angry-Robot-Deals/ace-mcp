@@ -16,7 +16,7 @@ COPY src/ ./src/
 RUN mkdir -p contexts logs
 
 # Install nodemon globally for hot reload
-RUN npm install -g nodemon ts-node
+RUN npm install -g nodemon tsx
 
 # Expose port
 EXPOSE 3001

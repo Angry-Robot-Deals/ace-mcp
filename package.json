@@ -16,7 +16,7 @@
   "homepage": "https://github.com/Angry-Robot-Deals/ace-mcp#readme",
   "scripts": {
     "build": "tsc",
-    "dev": "ts-node src/index.ts",
+    "dev": "tsx src/index.ts",
     "start": "node dist/index.js",
     "test": "jest",
     "test:watch": "jest --watch"

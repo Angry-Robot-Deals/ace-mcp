@@ -8,6 +8,7 @@
  */
 
 import { logger } from './utils/logger';
+import http from 'http';
 
 async function main() {
   try {
@@ -36,8 +37,6 @@ async function main() {
     const port = parseInt(process.env.ACE_SERVER_PORT || '34301');
     
     // Simple HTTP server for health checks and basic API
-    const http = require('http');
-    
     const server = http.createServer((req: any, res: any) => {
       // CORS headers
       res.setHeader('Access-Control-Allow-Origin', '*');
@@ -308,6 +307,10 @@ async function main() {
     
   } catch (error) {
     logger.error('❌ Failed to start ACE MCP Server:', error);
+    console.error('Detailed error:', error);
+    if (error instanceof Error) {
+      console.error('Stack:', error.stack);
+    }
     process.exit(1);
   }
 }
