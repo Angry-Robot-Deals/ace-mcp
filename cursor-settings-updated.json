@@ -1,0 +1,60 @@
+{
+    "window.commandCenter": 1,
+    "diffEditor.hideUnchangedRegions.enabled": true,
+    "terminal.integrated.inheritEnv": false,
+    "explorer.confirmPasteNative": false,
+    "explorer.confirmDragAndDrop": false,
+    "editor.accessibilitySupport": "off",
+    "explorer.excludeGitIgnore": false,
+    "cursor.cpp.disabledLanguages": [
+        "markdown"
+    ],
+    "explorer.confirmDelete": false,
+    "workbench.commandPalette.experimental.suggestCommands": true,
+    "workbench.editorAssociations": {
+        "*.mdc": "default"
+    },
+    "security.workspace.trust.enabled": true,
+    "scm.alwaysShowRepositories": true,
+    "scm.alwaysShowActions": true,
+    "cursor.composer.shouldAllowCustomModes": true,
+    "cursor.general.globalCursorIgnoreList": [
+        "**/.env",
+        "**/credentials.json",
+        "**/credentials.*.json",
+        "**/secret.json",
+        "**/secrets.json",
+        "**/*.key",
+        "**/*.pem",
+        "**/*.pfx",
+        "**/*.p12",
+        "**/*.crt",
+        "**/*.cer",
+        "**/id_rsa",
+        "**/id_dsa",
+        "**/.ssh/id_*",
+        "**/.env.prod*",
+        "**/.env.backup*",
+        "**/.env.local*",
+        "**/.env.test*"
+    ],
+    "git.autofetch": true,
+    "update.releaseTrack": "prerelease",
+    "workbench.settings.applyToAllProfiles": [],
+    "security.promptForLocalFileProtocolHandling": false,
+    "security.promptForRemoteFileProtocolHandling": false,
+    "mcp.servers": {
+        "ace-context-engineering": {
+            "command": "npx",
+            "args": ["tsx", "src/mcp-server-simple.ts"],
+            "cwd": "$HOME/code/perplexity/ace-mcp-server",
+            "env": {
+                "LLM_PROVIDER": "deepseek",
+                "API_BEARER_TOKEN": "token",
+                "ACE_SERVER_PORT": "34301",
+                "ACE_CONTEXT_DIR": "$HOME/code/perplexity/ace-mcp-server/contexts",
+                "ACE_MAX_PLAYBOOK_SIZE": "10000"
+            }
+        }
+    }
+}

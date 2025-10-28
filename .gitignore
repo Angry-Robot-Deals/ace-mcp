@@ -1,0 +1,11 @@
+node_modules/
+dist/
+contexts/
+*.log
+.env
+.DS_Store
+*.tgz
+.idea/
+temp/
+coverage/
+memory-bank/

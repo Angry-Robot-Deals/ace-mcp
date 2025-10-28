@@ -1,0 +1,21 @@
+{
+  "mcp": {
+    "servers": {
+      "ace-context-engineering": {
+        "command": "npx",
+        "args": [
+          "tsx",
+          "src/index.ts"
+        ],
+        "cwd": "$HOME/code/perplexity/ace-mcp-server",
+        "env": {
+          "LLM_PROVIDER": "deepseek",
+          "API_BEARER_TOKEN": "token",
+          "ACE_SERVER_PORT": "34301",
+          "ACE_CONTEXT_DIR": "$HOME/code/perplexity/ace-mcp-server/contexts",
+          "ACE_MAX_PLAYBOOK_SIZE": "10000"
+        }
+      }
+    }
+  }
+}

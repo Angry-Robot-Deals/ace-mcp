@@ -1,0 +1,81 @@
+name: ace-mcp
+
+services:
+  ace-server:
+    build: .
+    container_name: ace-mcp-server
+    restart: unless-stopped
+    ports:
+      - "${ACE_SERVER_PORT:-34301}:${ACE_SERVER_PORT:-34301}"
+    volumes:
+      - contexts:/app/contexts
+      - logs:/app/logs
+      - ./backups:/app/backups
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=${NODE_ENV:-production}
+      - ACE_CONTEXT_DIR=/app/contexts
+      - ACE_LOG_LEVEL=${ACE_LOG_LEVEL:-info}
+    networks:
+      - ace-network
+    healthcheck:
+      test: ["CMD", "node", "-e", "console.log('Health check')"]
+      interval: ${HEALTH_CHECK_INTERVAL:-30s}
+      timeout: ${HEALTH_CHECK_TIMEOUT:-10s}
+      retries: ${HEALTH_CHECK_RETRIES:-3}
+      start_period: 40s
+
+  ace-dashboard:
+    build:
+      context: ./dashboard
+      dockerfile: Dockerfile
+    container_name: ace-dashboard
+    restart: unless-stopped
+    ports:
+      - "${DASHBOARD_PORT:-34300}:80"
+    depends_on:
+      ace-server:
+        condition: service_healthy
+    networks:
+      - ace-network
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:80"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Optional: Metrics monitoring
+  ace-metrics:
+    image: prom/prometheus:latest
+    container_name: ace-metrics
+    restart: unless-stopped
+    ports:
+      - "${METRICS_PORT:-34302}:9090"
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus-data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--storage.tsdb.retention.time=200h'
+      - '--web.enable-lifecycle'
+    networks:
+      - ace-network
+    profiles:
+      - monitoring
+
+volumes:
+  contexts:
+    name: ${CONTEXTS_VOLUME:-ace_contexts}
+  logs:
+    name: ${LOGS_VOLUME:-ace_logs}
+  prometheus-data:
+    name: ace_prometheus_data
+
+networks:
+  ace-network:
+    name: ${DOCKER_NETWORK_NAME:-ace_network}
+    driver: bridge

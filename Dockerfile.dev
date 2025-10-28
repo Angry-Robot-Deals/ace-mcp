@@ -1,0 +1,25 @@
+FROM node:lts
+
+WORKDIR /app
+
+# Copy package files
+COPY package*.json ./
+COPY tsconfig.json ./
+
+# Install all dependencies (including dev)
+RUN npm ci
+
+# Copy source code
+COPY src/ ./src/
+
+# Create directories
+RUN mkdir -p contexts logs
+
+# Install nodemon globally for hot reload
+RUN npm install -g nodemon ts-node
+
+# Expose port
+EXPOSE 3001
+
+# Start with hot reload
+CMD ["npm", "run", "dev"]

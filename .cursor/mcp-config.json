@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "ace-mcp": {
+      "command": "node",
+      "args": ["-e", "console.log('ACE MCP Server running on http://localhost:34301')"],
+      "env": {
+        "ACE_SERVER_URL": "http://localhost:34301",
+        "ACE_API_TOKEN": "token"
+      }
+    }
+  }
+}

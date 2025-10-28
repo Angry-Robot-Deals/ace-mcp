@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACE MCP Server Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🧠 ACE MCP Server</h1>
+            <p>Agentic Context Engineering Dashboard</p>
+        </header>
+
+        <main>
+            <div class="status-grid">
+                <div class="card">
+                    <h3>🔌 Server Status</h3>
+                    <div id="server-status" class="status-indicator">
+                        <span class="dot"></span>
+                        <span class="text">Checking...</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>🤖 LLM Provider</h3>
+                    <div id="llm-provider" class="provider-info">
+                        <span class="provider-name">Loading...</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>📊 Statistics</h3>
+                    <div class="stats">
+                        <div class="stat">
+                            <span class="label">Contexts:</span>
+                            <span id="context-count" class="value">-</span>
+                        </div>
+                        <div class="stat">
+                            <span class="label">Uptime:</span>
+                            <span id="uptime" class="value">-</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>⚙️ Configuration</h3>
+                    <div class="config">
+                        <div class="config-item">
+                            <span class="label">Log Level:</span>
+                            <span id="log-level" class="value">-</span>
+                        </div>
+                        <div class="config-item">
+                            <span class="label">Context Dir:</span>
+                            <span id="context-dir" class="value">-</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button id="refresh-btn" class="btn btn-primary">🔄 Refresh</button>
+                <button id="test-llm-btn" class="btn btn-secondary">🧪 Test LLM</button>
+            </div>
+
+            <div class="logs-section">
+                <h3>📝 Recent Activity</h3>
+                <div id="logs" class="logs">
+                    <div class="log-entry">
+                        <span class="timestamp">2025-10-28 06:00:00</span>
+                        <span class="level info">INFO</span>
+                        <span class="message">ACE MCP Server Dashboard loaded</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>ACE MCP Server v1.0.0 | Built with ❤️ for Cursor AI</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
