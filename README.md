@@ -38,17 +38,12 @@ ACE doesn't just generate code - it **learns** from your development patterns an
 
 ### 🚀 Deployment
 - **[Production Deployment](./docs/deployment/DEPLOYMENT_README.md)** - Deploy to production servers
-- **[Docker Guide](./docs/deployment/DEPLOYMENT.md)** - Complete Docker deployment guide
+- **[Full Deployment Guide](./docs/intro/DEPLOYMENT.md)** - Complete Docker deployment guide
 
 ### 📖 Project Documentation
 - **[Project Status](./docs/intro/PROJECT_STATUS.md)** - Current development status
 - **[Architecture](./docs/intro/INITIALIZATION_REPORT.md)** - Technical architecture details
 - **[GitHub Setup](./docs/intro/GITHUB_INITIALIZATION.md)** - Repository initialization
-
-### 🧠 Memory Bank
-- **[Memory Bank Overview](./memory-bank/README.md)** - Central knowledge repository
-- **[Development Patterns](./memory-bank/systemPatterns.md)** - Coding patterns and rules
-- **[Project Context](./memory-bank/projectbrief.md)** - Project goals and vision
 
 ## ⚡ Quick Start
 
@@ -73,20 +68,11 @@ docker-compose -f docker-compose.dev.yml down
 ```
 
 ### 3. Configure Cursor AI
-Add to your Cursor AI settings:
-```json
-{
-  "mcp.servers": {
-    "ace-context-engineering": {
-      "command": "npx",
-      "args": ["tsx", "/path/to/ace-mcp-server/src/mcp-server-enhanced.ts"],
-      "env": {
-        "ACE_AUTO_ENHANCE": "true"
-      }
-    }
-  }
-}
-```
+
+See detailed setup instructions:
+
+- **[Basic Cursor AI Setup](./docs/setup/CURSOR_AI_SETUP.md)** - Initialize your MCP server with basic ACE tools
+- **[Enhanced Auto Setup](./docs/setup/CURSOR_AI_AUTO_SETUP.md)** - Automatically enhance prompts and invoke appropriate ACE methods
 
 ### 4. Use ACE Commands
 ```bash
@@ -175,9 +161,8 @@ ACE uses ports in the range **34300-34400**:
 ## 🤝 Contributing
 
 1. **Read the Documentation** - Start with [Project Overview](./docs/intro/START_HERE.md)
-2. **Check Memory Bank** - Review [Development Patterns](./memory-bank/systemPatterns.md)
-3. **Follow Standards** - Use [Style Guide](./memory-bank/style-guide.md)
-4. **Submit PRs** - Follow our contribution guidelines
+2. **Follow Best Practices** - Review [Development Guide](./docs/intro/DESCRIPTION.md)
+3. **Submit PRs** - Follow our contribution guidelines
 
 ## 📄 License
 
@@ -188,7 +173,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - **[GitHub Repository](https://github.com/Angry-Robot-Deals/ace-mcp)**
 - **[Issues & Bug Reports](https://github.com/Angry-Robot-Deals/ace-mcp/issues)**
 - **[Documentation](./docs/)**
-- **[Memory Bank](./memory-bank/)**
 
 ---
 
