@@ -21,6 +21,7 @@ import { Generator } from './core/generator.js';
 import { Reflector } from './core/reflector.js';
 import { Curator } from './core/curator.js';
 import { Playbook } from './core/playbook.js';
+import { Trajectory } from './core/types.js';
 import { createLLMProvider } from './llm/factory.js';
 import { logger } from './utils/logger.js';
 
@@ -51,15 +52,17 @@ class ACEMCPServer {
 
   private async initializeComponents() {
     try {
-      // Initialize LLM provider
-      const llmProvider = createLLMProvider();
+      // Initialize LLM provider from environment
+      const provider = process.env.LLM_PROVIDER || 'deepseek';
+      const llmConfig = { provider } as any;
+      const llmProvider = createLLMProvider(llmConfig);
       
       // Initialize ACE components with proper config
       const contextDir = process.env.ACE_CONTEXT_DIR || './contexts';
       
-      this.playbook = new Playbook(contextDir);
+      this.playbook = new Playbook();
       this.generator = new Generator(llmProvider, this.playbook);
-      this.reflector = new Reflector(llmProvider, this.playbook);
+      this.reflector = new Reflector(llmProvider);
       this.curator = new Curator(llmProvider, this.playbook);
 
       logger.info('🎯 ACE MCP Server components initialized');
@@ -193,10 +196,7 @@ class ACEMCPServer {
     
     logger.info(`🎯 Generating trajectory for: ${prompt}`);
     
-    const trajectory = await this.generator.generate({
-      prompt,
-      context: context || '',
-    });
+    const trajectory = await this.generator.generate(prompt);
 
     return {
       content: [
@@ -209,7 +209,8 @@ class ACEMCPServer {
               id: `traj_${Date.now()}`,
               prompt,
               context: context || '',
-              content: trajectory.content,
+              response: trajectory.response,
+              query: trajectory.query,
               generated_at: new Date().toISOString(),
             },
             message: 'Trajectory generated successfully',
@@ -224,10 +225,17 @@ class ACEMCPServer {
     
     logger.info(`🧠 Reflecting on code: ${code.substring(0, 50)}...`);
     
-    const trajectory = {
-      id: trajectory_id || `traj_${Date.now()}`,
-      content: code,
-      context: context || '',
+    // Create a proper trajectory object for reflection
+    const trajectory: Trajectory = {
+      query: code.substring(0, 200) || 'Code reflection',
+      response: code,
+      bullets_used: [],
+      bullets_helpful: [],
+      bullets_harmful: [],
+      metadata: {
+        model: 'code-reflection',
+        timestamp: new Date(),
+      },
     };
     
     const insights = await this.reflector.reflect(trajectory);
