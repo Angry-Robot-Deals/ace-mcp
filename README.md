@@ -265,7 +265,7 @@ For complete configuration options, see `.env.example` file.
 
 1. **Read the Documentation** - Start with [Project Overview](./docs/intro/START_HERE.md)
 2. **Follow Best Practices** - Review [Development Guide](./docs/intro/DESCRIPTION.md)
-3. **Submit PRs** - Follow our contribution guidelines
+3. **Submit PRs** - [Follow our contribution guidelines](./docs/CONTRIBUTING.md)
 
 ## 📄 License
 
