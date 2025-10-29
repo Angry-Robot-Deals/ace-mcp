@@ -59,9 +59,36 @@
                 </div>
             </div>
 
+            <div class="card auth-card">
+                <h3>🔐 Authentication</h3>
+                <div class="auth-form">
+                    <input 
+                        type="password" 
+                        id="bearer-token-input" 
+                        class="token-input" 
+                        placeholder="Enter Bearer Token"
+                        autocomplete="off"
+                    >
+                    <button id="save-token-btn" class="btn btn-primary">💾 Save Token</button>
+                    <button id="clear-token-btn" class="btn btn-secondary">🗑️ Clear</button>
+                </div>
+                <div id="token-status" class="token-status"></div>
+            </div>
+
             <div class="actions">
                 <button id="refresh-btn" class="btn btn-primary">🔄 Refresh</button>
                 <button id="test-llm-btn" class="btn btn-secondary">🧪 Test LLM</button>
+                <button id="load-playbook-btn" class="btn btn-secondary" disabled>📖 Load Playbook</button>
+            </div>
+
+            <div id="playbook-section" class="card playbook-card" style="display: none;">
+                <div class="playbook-header">
+                    <h3>📚 ACE Playbook</h3>
+                    <button id="refresh-playbook-btn" class="btn btn-secondary btn-small">🔄 Refresh</button>
+                </div>
+                <div id="playbook-content" class="playbook-content">
+                    <!-- Playbook content will be loaded here -->
+                </div>
             </div>
 
             <div class="logs-section">

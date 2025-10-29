@@ -72,7 +72,10 @@ echo -e "${GREEN}✓ Docker images built successfully${NC}"
 # Create deployment package
 echo ""
 echo -e "${YELLOW}📦 Creating deployment package...${NC}"
-TEMP_DIR=$(mktemp -d)
+mkdir -p ./temp
+echo "📁 Using ./temp for deployment files"
+TEMP_DIR=./temp/deploy-$(date +%Y%m%d-%H%M%S)
+mkdir -p "$TEMP_DIR"
 mkdir -p "$TEMP_DIR/ace-mcp-server"
 
 # Copy necessary files
@@ -322,7 +325,9 @@ echo "✅ Deployment completed successfully!"
 REMOTE_COMMANDS
 
 # Cleanup
+# Cleanup: remove deployment temp directory
 rm -rf "$TEMP_DIR"
+echo "🧹 Cleaned up temporary deployment files"
 
 echo ""
 echo -e "${GREEN}========================================${NC}"

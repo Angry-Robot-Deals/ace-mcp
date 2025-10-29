@@ -9,3 +9,13 @@ contexts/
 temp/
 coverage/
 memory-bank/
+backup/
+
+# Backup files (kept in ./backup/)
+*.backup
+*.bak
+*~
+
+# Temporary files (kept in ./temp/)
+*.tmp
+/temp/
