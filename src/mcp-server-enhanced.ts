@@ -194,6 +194,13 @@ class EnhancedACEMCPServer {
             );
         }
       } catch (error) {
+        // If it's already an McpError, re-throw it as-is
+        if (error instanceof McpError) {
+          logger.error(`❌ Tool ${name} failed:`, error.message);
+          throw error;
+        }
+        
+        // Otherwise, wrap it as InternalError
         const errorMessage = error instanceof Error ? error.message : String(error);
         logger.error(`❌ Tool ${name} failed:`, error);
         throw new McpError(
@@ -205,7 +212,15 @@ class EnhancedACEMCPServer {
   }
 
   private async handleSmartGenerate(args: any) {
-    const { prompt, context, auto_enhance = true } = args;
+    const { prompt, context, auto_enhance = true } = args || {};
+    
+    // Validate required arguments
+    if (!prompt || typeof prompt !== 'string' || prompt.trim().length === 0) {
+      throw new McpError(
+        ErrorCode.InvalidParams,
+        'Missing required parameter: prompt (string, non-empty)'
+      );
+    }
     
     logger.info(`🎯 Smart generating for: ${prompt}`);
     
@@ -244,7 +259,15 @@ class EnhancedACEMCPServer {
   }
 
   private async handleSmartReflect(args: any) {
-    const { code, auto_suggest = true } = args;
+    const { code, auto_suggest = true } = args || {};
+    
+    // Validate required arguments
+    if (!code || typeof code !== 'string' || code.trim().length === 0) {
+      throw new McpError(
+        ErrorCode.InvalidParams,
+        'Missing required parameter: code (string, non-empty)'
+      );
+    }
     
     logger.info(`🧠 Smart reflecting on code: ${code.substring(0, 50)}...`);
     
@@ -275,7 +298,15 @@ class EnhancedACEMCPServer {
   }
 
   private async handleContextAware(args: any) {
-    const { query, domain } = args;
+    const { query, domain } = args || {};
+    
+    // Validate required arguments
+    if (!query || typeof query !== 'string' || query.trim().length === 0) {
+      throw new McpError(
+        ErrorCode.InvalidParams,
+        'Missing required parameter: query (string, non-empty)'
+      );
+    }
     
     logger.info(`🎯 Context-aware assistance for: ${query}`);
     
@@ -308,7 +339,15 @@ class EnhancedACEMCPServer {
   }
 
   private async handleEnhancePrompt(args: any) {
-    const { original_prompt, focus_area } = args;
+    const { original_prompt, focus_area } = args || {};
+    
+    // Validate required arguments
+    if (!original_prompt || typeof original_prompt !== 'string' || original_prompt.trim().length === 0) {
+      throw new McpError(
+        ErrorCode.InvalidParams,
+        'Missing required parameter: original_prompt (string, non-empty)'
+      );
+    }
     
     logger.info(`✨ Enhancing prompt: ${original_prompt.substring(0, 50)}...`);
     

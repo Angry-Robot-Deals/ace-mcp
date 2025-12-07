@@ -39,6 +39,9 @@ RUN npm ci --omit=dev && npm cache clean --force
 # Copy built application from builder stage
 COPY --from=builder /app/dist ./dist
 
+# Copy test file for MCP method testing
+COPY test-server.mjs ./
+
 # Create necessary directories and set permissions
 RUN mkdir -p contexts logs && chown -R app:app /app
 

@@ -1,29 +1,29 @@
-# 🎯 Настройка ACE MCP в Cursor AI
+# 🎯 Setting Up ACE MCP in Cursor AI
 
-## 📋 Пошаговая инструкция
+## 📋 Step-by-Step Instructions
 
-### 1. 🚀 Запуск ACE MCP сервера
+### 1. 🚀 Starting ACE MCP Server
 
-Сначала убедитесь, что ACE MCP сервер запущен локально:
+First, make sure the ACE MCP server is running locally:
 
 ```bash
 cd $HOME/code/perplexity/ace-mcp-server
 docker-compose -f docker-compose.dev.yml up -d
 ```
 
-Проверьте статус:
+Check status:
 ```bash
 curl http://localhost:34301/health
 ```
 
-### 2. 🔧 Настройка Cursor AI
+### 2. 🔧 Cursor AI Configuration
 
-#### Вариант A: Через настройки Cursor
+#### Option A: Through Cursor Settings
 
-1. Откройте **Cursor AI**
-2. Перейдите в **Settings** (⌘ + ,)
-3. Найдите раздел **MCP Servers** или **Extensions**
-4. Добавьте новый MCP сервер с настройками:
+1. Open **Cursor AI**
+2. Go to **Settings** (⌘ + ,)
+3. Find **MCP Servers** or **Extensions** section
+4. Add a new MCP server with settings:
 
 ```json
 {
@@ -41,14 +41,14 @@ curl http://localhost:34301/health
 }
 ```
 
-#### Вариант B: Через конфигурационный файл
+#### Option B: Through Configuration File
 
-1. Найдите конфигурационный файл Cursor:
+1. Find Cursor configuration file:
    - **macOS**: `~/Library/Application Support/Cursor/User/settings.json`
    - **Linux**: `~/.config/Cursor/User/settings.json`
    - **Windows**: `%APPDATA%\Cursor\User\settings.json`
 
-2. Добавьте в файл настройки MCP:
+2. Add MCP settings to the file:
 
 ```json
 {
@@ -69,96 +69,96 @@ curl http://localhost:34301/health
 }
 ```
 
-### 3. 🔄 Перезапуск Cursor AI
+### 3. 🔄 Restart Cursor AI
 
-После добавления конфигурации:
-1. Полностью закройте Cursor AI
-2. Запустите снова
-3. Проверьте в логах, что MCP сервер подключился
+After adding configuration:
+1. Fully close Cursor AI
+2. Start it again
+3. Check logs to verify MCP server connected
 
-### 4. ✅ Проверка подключения
+### 4. ✅ Connection Verification
 
-В Cursor AI попробуйте использовать команды:
+In Cursor AI, try using commands:
 
 ```
 @ace-context-engineering generate a Python function for sorting
 ```
 
-или
+or
 
 ```
 @ace-context-engineering reflect on this code: def sort_list(arr): return sorted(arr)
 ```
 
-## 🎯 Доступные команды ACE MCP
+## 🎯 Available ACE MCP Commands
 
 ### 📝 Generator
 ```
 @ace generate <prompt>
 ```
-Генерирует траектории разработки на основе промпта.
+Generates development trajectories based on prompt.
 
 ### 🧠 Reflector  
 ```
 @ace reflect <code>
 ```
-Анализирует код и создает инсайты для улучшения.
+Analyzes code and creates insights for improvement.
 
 ### 📚 Curator
 ```
 @ace curate <insights>
 ```
-Обновляет Playbook с новыми знаниями.
+Updates Playbook with new knowledge.
 
 ### 📖 Playbook
 ```
 @ace playbook
 ```
-Показывает текущий Playbook с паттернами и best practices.
+Shows current Playbook with patterns and best practices.
 
-## 🔧 Настройки окружения
+## 🔧 Environment Settings
 
-Убедитесь, что установлены зависимости:
+Make sure dependencies are installed:
 
 ```bash
-# В директории проекта
+# In project directory
 npm install -g tsx
 npm install
 ```
 
-## 🐛 Устранение неполадок
+## 🐛 Troubleshooting
 
-### Проблема: MCP сервер не подключается
-**Решение**: 
-1. Проверьте, что Docker контейнеры запущены
-2. Убедитесь, что порт 34301 свободен
-3. Проверьте правильность путей в конфигурации
+### Problem: MCP Server Not Connecting
+**Solution**: 
+1. Check that Docker containers are running
+2. Make sure port 34301 is free
+3. Verify path correctness in configuration
 
-### Проблема: Ошибка аутентификации
-**Решение**:
-1. Проверьте Bearer token в `.env` файле
-2. Убедитесь, что токен совпадает в конфигурации Cursor
+### Problem: Authentication Error
+**Solution**:
+1. Check Bearer token in `.env` file
+2. Ensure token matches in Cursor configuration
 
-### Проблема: Команды не работают
-**Решение**:
-1. Перезапустите Cursor AI
-2. Проверьте логи MCP сервера: `docker logs ace-mcp-server-dev`
-3. Убедитесь, что используете правильный синтаксис команд
+### Problem: Commands Not Working
+**Solution**:
+1. Restart Cursor AI
+2. Check MCP server logs: `docker logs ace-mcp-server-dev`
+3. Make sure you're using correct command syntax
 
-## 📊 Мониторинг
+## 📊 Monitoring
 
-Для мониторинга работы ACE MCP:
+To monitor ACE MCP operation:
 
 1. **Dashboard**: http://localhost:34300
 2. **API Status**: http://localhost:34301/health
 3. **Docker Logs**: `docker logs -f ace-mcp-server-dev`
 
-## 🚀 Готово!
+## 🚀 Ready!
 
-После настройки ACE MCP будет:
-- ✅ Генерировать траектории разработки
-- ✅ Анализировать ваш код
-- ✅ Накапливать знания в Playbook
-- ✅ Предлагать улучшения на основе опыта
+After setup, ACE MCP will:
+- ✅ Generate development trajectories
+- ✅ Analyze your code
+- ✅ Accumulate knowledge in Playbook
+- ✅ Suggest improvements based on experience
 
-Теперь Cursor AI будет использовать самосовершенствующийся контекст для более качественной помощи в разработке! 🎉
+Now Cursor AI will use self-improving context for better development assistance! 🎉

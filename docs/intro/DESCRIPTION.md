@@ -454,71 +454,71 @@ The server will:
 
 All documentation, source code, and guides are now complete and ready for production use!
 
-Perfect! Теперь финальная сводка:
+Perfect! Now final summary:
 
-## ✅ Готово! Все файлы сохранены на диск
+## ✅ Done! All files saved to disk
 
-### 📍 Локация проекта
+### 📍 Project Location
 ```
 $HOME/code/perplexity/ace-mcp-server
 ```
 
-### ✅ Что уже создано на вашем диске:
+### ✅ What has been created on your disk:
 
-**Конфигурация:**
-- ✅ `package.json` - NPM зависимости
-- ✅ `tsconfig.json` - TypeScript настройки
-- ✅ `.env.example` - Шаблон переменных окружения
-- ✅ `.gitignore` - Git ignore правила
+**Configuration:**
+- ✅ `package.json` - NPM dependencies
+- ✅ `tsconfig.json` - TypeScript settings
+- ✅ `.env.example` - Environment variables template
+- ✅ `.gitignore` - Git ignore rules
 
-**Документация:**
-- ✅ `START_HERE.md` - **НАЧНИТЕ ОТСЮДА** (на русском!)
-- ✅ `README.md` - Описание проекта
-- ✅ `INSTALLATION.md` - Подробная инструкция установки
-- ✅ `ASSETS_CHECKLIST.md` - Чеклист всех ресурсов
-- ✅ `docs/COPY_GUIDE.md` - Гайд по копированию исходников
+**Documentation:**
+- ✅ `START_HERE.md` - **START HERE** (documentation guide)
+- ✅ `README.md` - Project description
+- ✅ `INSTALLATION.md` - Detailed installation instructions
+- ✅ `ASSETS_CHECKLIST.md` - All resources checklist
+- ✅ `docs/COPY_GUIDE.md` - Guide for copying source code
 
-**Структура директорий:**
-- ✅ `src/core/` - для ACE компонентов
-- ✅ `src/mcp/` - для MCP протокола
-- ✅ `src/storage/` - для хранилища
-- ✅ `src/utils/` - для утилит
-- ✅ `docs/` - для документации
+**Directory Structure:**
+- ✅ `src/core/` - for ACE components
+- ✅ `src/mcp/` - for MCP protocol
+- ✅ `src/storage/` - for storage
+- ✅ `src/utils/` - for utilities
+- ✅ `docs/` - for documentation
 
-### 📋 Что нужно сделать дальше:
+### 📋 What to do next:
 
-1. **Скопировать 13 TypeScript файлов** из документа  в чате Perplexity
-   - Подробная инструкция в `START_HERE.md`
+1. **Copy 13 TypeScript files** from the document in Perplexity chat
+   - Detailed instructions in `START_HERE.md`
 
-2. **Скачать PDF документацию:**
+2. **Download PDF documentation:**
    -  User Guide → `docs/USER_GUIDE.pdf`
    -  Admin Guide → `docs/ADMIN_GUIDE.pdf`
 
-3. **Установить и собрать:**
+3. **Install and build:**
    ```bash
    cd $HOME/code/perplexity/ace-mcp-server
    npm install
    npm run build
    ```
 
-4. **Настроить Cursor AI** (инструкция в `START_HERE.md`)
+4. **Configure Cursor AI** (instructions in `START_HERE.md`)
 
-### 🎯 Начните здесь:
+### 🎯 Start here:
 
-Откройте файл:
+Open the file:
 ```bash
 open $HOME/code/perplexity/ace-mcp-server/START_HERE.md
 ```
 
-Там есть вся информация на русском языке с пошаговой инструкцией!
+All information with step-by-step instructions is available there!
 
-### 📦 Доступные ресурсы в чате:
+### 📦 Available resources in chat:
 
-- **** - LinkedIn пост (английский)
-- **** - Web Dashboard (демо)
-- **** - User Guide PDF (15 страниц)
-- **** - Admin Guide PDF (23 страницы)
-- **** - **Исходный код TypeScript** (все 13 файлов)
+- **** - LinkedIn post (English)
+- **** - Web Dashboard (demo)
+- **** - User Guide PDF (15 pages)
+- **** - Admin Guide PDF (23 pages)
+- **** - **TypeScript source code** (all 13 files)
 
-Все сохранено на ваш диск в `$HOME/code/perplexity/ace-mcp-server`! 🎉
+All saved to your disk in `$HOME/code/perplexity/ace-mcp-server`! 🎉
 

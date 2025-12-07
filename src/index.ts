@@ -7,7 +7,7 @@
  * Based on Stanford University & SambaNova Systems research
  */
 
-import { logger } from './utils/logger';
+import { logger } from './utils/logger.js';
 import http from 'http';
 
 async function main() {

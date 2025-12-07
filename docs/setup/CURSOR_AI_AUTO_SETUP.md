@@ -1,23 +1,23 @@
-# 🚀 Автоматическое использование ACE в Cursor AI
+# 🚀 Automatic ACE Usage in Cursor AI
 
-## 📋 Обзор
+## 📋 Overview
 
-Этот документ описывает, как настроить Cursor AI для автоматического вызова методов ACE и улучшения промптов.
+This document describes how to configure Cursor AI for automatic ACE method calls and prompt enhancement.
 
-## 🎯 Новые возможности Enhanced ACE MCP Server
+## 🎯 New Features of Enhanced ACE MCP Server
 
-### ✨ Умные инструменты:
+### ✨ Smart Tools:
 
-1. **`ace_smart_generate`** - Автоматически улучшает промпты и генерирует код
-2. **`ace_smart_reflect`** - Анализирует код и предлагает улучшения
-3. **`ace_context_aware`** - Предоставляет контекстуальные рекомендации
-4. **`ace_enhance_prompt`** - Улучшает любой промпт накопленными знаниями
+1. **`ace_smart_generate`** - Automatically enhances prompts and generates code
+2. **`ace_smart_reflect`** - Analyzes code and suggests improvements
+3. **`ace_context_aware`** - Provides contextual recommendations
+4. **`ace_enhance_prompt`** - Enhances any prompt with accumulated knowledge
 
-## 🔧 Настройка Enhanced MCP Server
+## 🔧 Enhanced MCP Server Configuration
 
-### 1. Обновите конфигурацию Cursor AI
+### 1. Update Cursor AI Configuration
 
-Замените в `~/.cursor/mcp.json`:
+Replace in `~/.cursor/mcp.json`:
 
 ```json
 {
@@ -36,9 +36,9 @@
 }
 ```
 
-### 2. Обновите настройки Cursor AI
+### 2. Update Cursor AI Settings
 
-В `~/Library/Application Support/Cursor/User/settings.json`:
+In `~/Library/Application Support/Cursor/User/settings.json`:
 
 ```json
 {
@@ -57,27 +57,27 @@
 }
 ```
 
-## 🎯 Как использовать автоматические улучшения
+## 🎯 How to Use Automatic Enhancements
 
-### 1. Умная генерация кода
+### 1. Smart Code Generation
 
-Вместо обычного запроса:
+Instead of a regular request:
 ```
-Создай функцию для сортировки массива
-```
-
-Используйте:
-```
-@ace_smart_generate создай функцию для сортировки массива
+Create a function to sort an array
 ```
 
-**Результат:** ACE автоматически:
-- ✅ Добавит релевантные паттерны проектирования
-- ✅ Включит лучшие практики
-- ✅ Применит накопленные инсайты
-- ✅ Предложит оптимизации
+Use:
+```
+@ace_smart_generate create a function to sort an array
+```
 
-### 2. Умный анализ кода
+**Result:** ACE automatically:
+- ✅ Adds relevant design patterns
+- ✅ Includes best practices
+- ✅ Applies accumulated insights
+- ✅ Suggests optimizations
+
+### 2. Smart Code Analysis
 
 ```
 @ace_smart_reflect 
@@ -91,40 +91,40 @@ function quickSort(arr) {
 }
 ```
 
-**Результат:** ACE автоматически:
-- 🔍 Проанализирует сложность кода
-- 🎯 Выявит потенциальные проблемы
-- 💡 Предложит конкретные улучшения
-- 📊 Даст оценку качества кода
+**Result:** ACE automatically:
+- 🔍 Analyzes code complexity
+- 🎯 Identifies potential issues
+- 💡 Suggests specific improvements
+- 📊 Provides code quality assessment
 
-### 3. Контекстуальная помощь
-
-```
-@ace_context_aware как оптимизировать API для высокой нагрузки domain:api
-```
-
-**Результат:** ACE предоставит:
-- 📚 Релевантные знания из playbook
-- 🎯 План действий
-- 🔧 Специфичные для API рекомендации
-- 📋 Следующие шаги
-
-### 4. Улучшение промптов
+### 3. Contextual Assistance
 
 ```
-@ace_enhance_prompt создай REST API для пользователей focus_area:security
+@ace_context_aware how to optimize API for high load domain:api
 ```
 
-**Результат:** ACE улучшит промпт:
-- 🔒 Добавит соображения безопасности
-- 📋 Включит лучшие практики
-- 🎯 Применит релевантные паттерны
+**Result:** ACE will provide:
+- 📚 Relevant knowledge from playbook
+- 🎯 Action plan
+- 🔧 API-specific recommendations
+- 📋 Next steps
 
-## 🤖 Автоматические триггеры
+### 4. Prompt Enhancement
 
-### Настройка автоматического вызова
+```
+@ace_enhance_prompt create REST API for users focus_area:security
+```
 
-Создайте файл `.cursor/rules` в корне проекта:
+**Result:** ACE will enhance the prompt:
+- 🔒 Add security considerations
+- 📋 Include best practices
+- 🎯 Apply relevant patterns
+
+## 🤖 Automatic Triggers
+
+### Automatic Call Configuration
+
+Create `.cursor/rules` file in project root:
 
 ```markdown
 # ACE Auto-Enhancement Rules
@@ -154,80 +154,80 @@ For complex requests:
 - Include accumulated knowledge
 ```
 
-## 🎯 Примеры автоматического использования
+## 🎯 Automatic Usage Examples
 
-### Пример 1: Создание API
+### Example 1: API Creation
 
-**Ваш запрос:**
+**Your request:**
 ```
-Создай endpoint для регистрации пользователей
-```
-
-**ACE автоматически:**
-1. Вызовет `ace_smart_generate`
-2. Улучшит промпт с учетом:
-   - Валидации входных данных
-   - Хеширования паролей
-   - Обработки ошибок
-   - Безопасности API
-3. Предложит полную реализацию
-
-### Пример 2: Анализ кода
-
-**Ваш запрос:**
-```
-Проверь этот код на проблемы
+Create an endpoint for user registration
 ```
 
-**ACE автоматически:**
-1. Вызовет `ace_smart_reflect`
-2. Проанализирует:
-   - Сложность кода
-   - Потенциальные уязвимости
-   - Производительность
-   - Соответствие лучшим практикам
-3. Предложит конкретные улучшения
+**ACE automatically:**
+1. Calls `ace_smart_generate`
+2. Enhances prompt with:
+   - Input validation
+   - Password hashing
+   - Error handling
+   - API security
+3. Suggests complete implementation
 
-## 🔄 Обновление знаний
+### Example 2: Code Analysis
 
-ACE автоматически обновляет свою базу знаний на основе:
-- ✅ Успешных решений
-- ❌ Найденных проблем
-- 🎯 Паттернов использования
-- 📊 Метрик качества
+**Your request:**
+```
+Check this code for issues
+```
 
-## 🚀 Запуск Enhanced MCP Server
+**ACE automatically:**
+1. Calls `ace_smart_reflect`
+2. Analyzes:
+   - Code complexity
+   - Potential vulnerabilities
+   - Performance
+   - Best practices compliance
+3. Suggests specific improvements
+
+## 🔄 Knowledge Updates
+
+ACE automatically updates its knowledge base based on:
+- ✅ Successful solutions
+- ❌ Found issues
+- 🎯 Usage patterns
+- 📊 Quality metrics
+
+## 🚀 Starting Enhanced MCP Server
 
 ```bash
 cd $HOME/code/perplexity/ace-mcp-server
 
-# Остановить старый сервер
+# Stop old server
 pkill -f "mcp-server-simple"
 
-# Запустить enhanced сервер
+# Start enhanced server
 npx tsx src/mcp-server-enhanced.ts
 ```
 
-## ✅ Проверка работы
+## ✅ Verification
 
-После настройки попробуйте:
+After setup, try:
 
 ```
-@ace_smart_generate создай функцию для валидации email
+@ace_smart_generate create a function to validate email
 ```
 
-Вы должны увидеть:
-- 🎯 Улучшенный промпт с лучшими практиками
-- 🔧 Рекомендации по реализации
-- 📋 План пошагового выполнения
-- 💡 Дополнительные инсайты
+You should see:
+- 🎯 Enhanced prompt with best practices
+- 🔧 Implementation recommendations
+- 📋 Step-by-step plan
+- 💡 Additional insights
 
-## 🎉 Результат
+## 🎉 Result
 
-После настройки Cursor AI будет:
-- 🤖 Автоматически улучшать ваши промпты
-- 🎯 Применять накопленные знания
-- 💡 Предлагать лучшие решения
-- 📊 Учиться на каждом взаимодействии
+After setup, Cursor AI will:
+- 🤖 Automatically enhance your prompts
+- 🎯 Apply accumulated knowledge
+- 💡 Suggest better solutions
+- 📊 Learn from every interaction
 
-**ACE превратит Cursor AI в самосовершенствующегося помощника разработчика!** 🚀
+**ACE will turn Cursor AI into a self-improving developer assistant!** 🚀

@@ -1,97 +1,97 @@
 # 🚀 START HERE - ACE MCP Server Setup
 
-## 🎉 Успешно создано!
+## 🎉 Successfully Created!
 
-**Локация**: `$HOME/code/perplexity/ace-mcp-server`
+**Location**: `$HOME/code/perplexity/ace-mcp-server`
 
-## ✅ Что уже готово
+## ✅ What's Already Ready
 
 ```
 ace-mcp-server/
-├── ✅ package.json           # NPM конфигурация
-├── ✅ tsconfig.json          # TypeScript настройки
-├── ✅ .env.example           # Пример переменных окружения
+├── ✅ package.json           # NPM configuration
+├── ✅ tsconfig.json          # TypeScript settings
+├── ✅ .env.example           # Environment variables example
 ├── ✅ .gitignore             # Git ignore
-├── ✅ README.md              # Описание проекта
-├── ✅ INSTALLATION.md        # Детальная инструкция
-├── ✅ ASSETS_CHECKLIST.md    # Чеклист ресурсов
-├── ✅ START_HERE.md          # Этот файл
-├── ✅ src/                   # Директория исходников
-│   ├── ✅ core/              # ACE компоненты
-│   ├── ✅ mcp/               # MCP протокол
-│   ├── ✅ storage/           # Хранилище
-│   └── ✅ utils/             # Утилиты
-└── ✅ docs/                  # Документация
-    └── ✅ COPY_GUIDE.md      # Гайд по копированию
+├── ✅ README.md              # Project description
+├── ✅ INSTALLATION.md        # Detailed instructions
+├── ✅ ASSETS_CHECKLIST.md    # Resources checklist
+├── ✅ START_HERE.md          # This file
+├── ✅ src/                   # Source code directory
+│   ├── ✅ core/              # ACE components
+│   ├── ✅ mcp/               # MCP protocol
+│   ├── ✅ storage/           # Storage
+│   └── ✅ utils/             # Utilities
+└── ✅ docs/                  # Documentation
+    └── ✅ COPY_GUIDE.md      # Copying guide
 ```
 
-## 📂 Что нужно скопировать
+## 📂 What Needs to be Copied
 
-### 1. Исходный код TypeScript (13 файлов)
+### 1. TypeScript Source Code (13 files)
 
-**Источник**: Документ **[88]** в чате Perplexity  
-**Название**: "ace-mcp-complete-source.md"
+**Source**: Document **[88]** in Perplexity chat  
+**Name**: "ace-mcp-complete-source.md"
 
-#### Быстрый способ:
+#### Quick Method:
 
-1. Откройте документ [88] в Perplexity
-2. Найдите каждый файл по заголовку "## FILE: ..."
-3. Скопируйте код между тройными backticks \`\`\`typescript ... \`\`\`
-4. Вставьте в соответствующий файл
+1. Open document [88] in Perplexity
+2. Find each file by heading "## FILE: ..."
+3. Copy code between triple backticks \`\`\`typescript ... \`\`\`
+4. Paste into corresponding file
 
-#### Список файлов для копирования:
+#### List of Files to Copy:
 
-**Storage (3 файла)**
+**Storage (3 files)**
 - `src/storage/bullet.ts`
 - `src/storage/embeddings.ts`
 - `src/storage/deduplicator.ts`
 
-**Core (4 файла)**
+**Core (4 files)**
 - `src/core/playbook.ts`
 - `src/core/generator.ts`
 - `src/core/reflector.ts`
 - `src/core/curator.ts`
 
-**MCP (2 файла)**
+**MCP (2 files)**
 - `src/mcp/tools.ts`
 - `src/mcp/server.ts`
 
-**Utils (3 файла)**
+**Utils (3 files)**
 - `src/utils/config.ts`
 - `src/utils/logger.ts`
 - `src/utils/errors.ts`
 
-**Entry Point (1 файл)**
+**Entry Point (1 file)**
 - `src/index.ts`
 
-### 2. PDF Документация (2 файла)
+### 2. PDF Documentation (2 files)
 
-**User Guide** - Документ [85] → сохраните как `docs/USER_GUIDE.pdf`  
-**Admin Guide** - Документ [86] → сохраните как `docs/ADMIN_GUIDE.pdf`
+**User Guide** - Document [85] → save as `docs/USER_GUIDE.pdf`  
+**Admin Guide** - Document [86] → save as `docs/ADMIN_GUIDE.pdf`
 
-### 3. LinkedIn пост (опционально)
+### 3. LinkedIn Post (optional)
 
-**LinkedIn Post** - Документ [42] → сохраните как `docs/linkedin-post.md`
+ cittadinanza**LinkedIn Post** - Document [42] → save as `docs/linkedin-post.md`
 
-## 🛠️ Быстрая установка (после копирования файлов)
+## 🛠️ Quick Installation (after copying files)
 
 ```bash
-# 1. Перейти в директорию
+# 1. Go to directory
 cd $HOME/code/perplexity/ace-mcp-server
 
-# 2. Установить зависимости
+# 2. Install dependencies
 npm install
 
-# 3. Собрать проект
+# 3. Build project
 npm run build
 
-# 4. Протестировать
+# 4. Test
 npm start
 ```
 
-## ⚙️ Настройка Cursor AI
+## ⚙️ Cursor AI Configuration
 
-Отредактируйте `~/.cursor/mcp.json`:
+Edit `~/.cursor/mcp.json`:
 
 ```json
 {
@@ -109,95 +109,95 @@ npm start
 }
 ```
 
-Перезапустите Cursor AI.
+Restart Cursor AI.
 
-## 🎯 Быстрый тест
+## 🎯 Quick Test
 
-В Cursor AI:
+In Cursor AI:
 
 ```
 Using ACE, help me create a simple Express.js authentication endpoint
 ```
 
-ACE должен:
-1. ✅ Сгенерировать код используя playbook
-2. ✅ Отследить полезные стратегии
-3. ✅ Позволить рефлексию
-4. ✅ Обновить playbook
+ACE should:
+1. ✅ Generate code using playbook
+2. ✅ Track useful strategies
+3. ✅ Allow reflection
+4. ✅ Update playbook
 
-## 📚 Подробные инструкции
+## 📚 Detailed Instructions
 
-### Для пользователей
-➡️ Читайте `docs/USER_GUIDE.pdf` (скачайте из [85])
+### For Users
+➡️ Read `docs/USER_GUIDE.pdf` (download from [85])
 
-### Для администраторов  
-➡️ Читайте `docs/ADMIN_GUIDE.pdf` (скачайте из [86])
+### For Administrators  
+➡️ Read `docs/ADMIN_GUIDE.pdf` (download from [86])
 
-### Для разработчиков
-➡️ Читайте `README.md` и `INSTALLATION.md`
+### For Developers
+➡️ Read `README.md` and `INSTALLATION.md`
 
-## 🔗 Быстрые ссылки
+## 🔗 Quick Links
 
-**В текущем чате Perplexity найдите:**
+**In the current Perplexity chat find:**
 
-- [42] - LinkedIn Post (англ)
-- [84] - Web Dashboard (демо)
-- [85] - User Guide PDF (15 страниц)
-- [86] - Admin Guide PDF (23 страницы)  
-- [88] - Исходный код TypeScript
+- [42] - LinkedIn Post (English)
+- [84] - Web Dashboard (demo)
+- [85] - User Guide PDF (15 pages)
+- [86] - Admin Guide PDF (23 pages)  
+- [88] - TypeScript source code
 
-## ⚠️ Важно
+## ⚠️ Important
 
-1. **Скопируйте ВСЕ 13 TypeScript файлов** из документа [88]
-2. **Не забудьте** скачать PDF документацию
-3. **Проверьте** что `npm run build` выполняется без ошибок
-4. **Настройте** Cursor AI перед использованием
+1. **Copy ALL 13 TypeScript files** from document [88]
+2. **Don't forget** to download PDF documentation
+3. **Check** that `npm run build` runs without errors
+4. **Configure** Cursor AI before use
 
-## 🐛 Проблемы?
+## 🐛 Troubleshooting?
 
-### Build ошибки
+### Build Errors
 ```bash
-# Удалите и переустановите
+# Delete and reinstall
 rm -rf node_modules dist
 npm install
 npm run build
 ```
 
-### MCP сервер не подключается
+### MCP Server Not Connecting
 ```bash
-# Проверьте что файл существует
+# Check that file exists
 ls dist/index.js
 
-# Проверьте Cursor логи
+# Check Cursor logs
 # Settings → Developer → View MCP Logs
 ```
 
-### Помощь
-- Читайте `INSTALLATION.md` - детальные инструкции
-- Читайте `docs/COPY_GUIDE.md` - гайд по копированию
-- Читайте `ASSETS_CHECKLIST.md` - полный чеклист
+### Help
+- Read `INSTALLATION.md` - detailed instructions
+- Read `docs/COPY_GUIDE.md` - copying guide
+- Read `ASSETS_CHECKLIST.md` - complete checklist
 
-## ✨ Что дальше?
+## ✨ What's Next?
 
-1. ✅ Скопируйте исходный код из [88]
-2. ✅ Установите зависимости: `npm install`
-3. ✅ Соберите проект: `npm run build`
-4. ✅ Настройте Cursor AI
-5. ✅ Начните использовать ACE!
+1. ✅ Copy source code from [88]
+2. ✅ Install dependencies: `npm install`
+3. ✅ Build project: `npm run build`
+4. ✅ Configure Cursor AI
+5. ✅ Start using ACE!
 
-## 🎆 Особенности
+## 🎆 Features
 
-- **86.9%** снижение latency адаптации
-- **+10.6%** точности на agent задачах
-- Инкрементальные дельта-обновления
-- Семантическая дедупликация
-- Само-обучение без размеченных данных
-- Мульти-контекстная поддержка
+- **86.9%** reduction in adaptation latency
+- **+10.6%** accuracy on agent tasks
+- Incremental delta updates
+- Semantic deduplication
+- Self-learning without labeled data
+- Multi-context support
 
 ---
 
-**Статус**: Структура готова ✅  
-**Следующий шаг**: Скопировать исходники из документа [88]  
-**Создано**: 26 октября 2025
+**Status**: Structure ready ✅  
+**Next Step**: Copy source code from document [88]  
+**Created**: October 26, 2025
 
-🚀 **Начните с документа [88] - скопируйте все TypeScript файлы!**
+🚀 **Start with document [88] - copy all TypeScript files!**

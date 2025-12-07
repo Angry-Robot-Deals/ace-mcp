@@ -1,5 +1,5 @@
 #!/bin/bash
-# Скрипт для просмотра playbook
+# Script to view playbook
 
 # Colors for output
 RED='\033[0;31m'
